@@ -17,13 +17,13 @@ function AddTodo() {
   };
 
   return (
-    <div className="flex flex-row justify-center">
+    <div className="flex flex-row justify-center items-center w-full max-w-2xl mx-auto my-4 p-4 bg-white dark:bg-stone-100 rounded-lg shadow-md border border-stone-200">
       <input
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
         placeholder="Enter Todo"
         type="text"
-        className="aria-disabled:cursor-not-allowed outline-none focus:outline-none text-stone-800 dark:text-white placeholder:text-stone-600/60 ring-transparent border border-stone-200 transition-all ease-in disabled:opacity-50 disabled:pointer-events-none select-none text-sm py-2 px-2.5 ring shadow-sm bg-white rounded-lg duration-100 hover:border-blue-300 hover:ring-none focus:border-blue-400 focus:ring-none peer"
+        className="w-2xs aria-disabled:cursor-not-allowed outline-none focus:outline-none text-stone-800 placeholder:text-stone-600/60 ring-transparent border border-stone-200 transition-all ease-in disabled:opacity-50 disabled:pointer-events-none select-none text-sm py-2 px-2.5 ring shadow-sm bg-white rounded-lg duration-100 hover:border-blue-300 hover:ring-none focus:border-blue-400 focus:ring-none peer"
       />
 
       <button

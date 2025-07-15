@@ -1,19 +1,21 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addTodo, removeTodo, updateTodo } from "../features/todoSlice";
+import { useEffect, useState } from "react";
 
 function TodoList() {
   const todoName = useSelector((state) => state.todo);
   const dispatch = useDispatch();
 
   return (
-    <div className="p-4 rounded shadow flex flex-col mt-3 bg-green-100">
+    <div className="rounded shadow flex flex-col mt-3  w-full max-w-2xl mx-auto p-4 bg-white dark:bg-stone-100 border border-stone-100">
       <ul>
         {todoName.map((todo, index) => (
-          <li key={index}>
+          
+          <li className="bg-white p-4 m-2 h-17 rounded-md" key={index}>
             {todo.name}
             <button
               onClick={() => dispatch(removeTodo(index))}
-              className="border rounded-md h-8 border-red-400"
+              className="pl-3 pr-3 text-white rounded-md h-9 bg-red-400 float-right ml-2"
             >
               Delete
             </button>
@@ -23,11 +25,12 @@ function TodoList() {
                   updateTodo({ index, newTodo: prompt("Enter new Todo") })
                 )
               }
-              className="border rounded-md h-8 border-orange-400"
+              className="pl-3 pr-3 text-white border rounded-md h-9 bg-orange-400 float-right ml-2"
             >
               Update
             </button>
           </li>
+          
         ))}
       </ul>
     </div>
